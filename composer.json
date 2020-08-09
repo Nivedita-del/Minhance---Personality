@@ -1,0 +1,20 @@
+{
+    "name": "nivedita-del/minhance---personality",
+    "description": "OOP vanilla JavaScript test",
+    "type": "project",
+    "require": {
+        "phpmailer/phpmailer": "~6.1"
+    },
+    "require-dev": {
+        "filp/whoops": "^2.7",
+        "fzaninotto/faker": "^1.9"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "nivedita-del",
+            "email": "unknown@domain.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}
