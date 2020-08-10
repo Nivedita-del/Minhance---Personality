@@ -11,7 +11,7 @@ $faker = Factory::create();
 $fullName = $faker->name;
 
 // run only on a post
-if (isset($_POST)) {
+if (!empty($_POST)) {
     try {
         // DEBUGGER DEMO: uncomment the following line.
         // throw new \PHPMailer\PHPMailer\Exception("This is an exception that has been caught.");
