@@ -4,8 +4,8 @@ declare(strict_types=1);
 use Whoops\Handler\PrettyPageHandler;
 use Whoops\Run;
 
-require_once 'config/variables.php';
 require_once 'vendor/autoload.php';
+require_once 'config/variables.php';
 
 // Debugger
 $whoops = new Run;
