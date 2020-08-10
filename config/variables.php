@@ -1,5 +1,7 @@
 <?php
 
+require_once dirname(__DIR__) . '/vendor/phpmailer/phpmailer/src/PHPMailer.php';
+
 use PHPMailer\PHPMailer\PHPMailer;
 
 $config = [

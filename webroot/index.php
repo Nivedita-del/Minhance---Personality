@@ -1,24 +1,22 @@
 <?php
 declare(strict_types=1);
 
-require dirname(__DIR__) . '/config/variables.php';
-require dirname(__DIR__) . '/vendor/autoload.php';
-
 use PHPmailer\PHPmailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
-use Whoops\Run;
-use Whoops\Handler\PrettyPageHandler;
+use Faker\Factory;
 
-// Debugger
-$whoops = new Run();
-$whoops->pushHandler(new PrettyPageHandler());
-$whoops->register();
+
+// Faker Demo
+$faker = Factory::create();
+$fullName = $faker->name;
 
 // run only on a post
 if (isset($_POST)) {
-    // You can add your own handler or just use my debugger
     try {
+        // DEBUGGER DEMO: uncomment the following line.
+        // throw new \PHPMailer\PHPMailer\Exception("This is an exception that has been caught.");
+
+        // Mailer Configuration
         $mail = new PHPMailer();
         $mail->isSMTP();
         $mail->Host = $config['mail']['host'];
@@ -27,8 +25,23 @@ if (isset($_POST)) {
         $mail->Password = $config['mail']['password'];
         $mail->SMTPSecure = $config['mail']['SMTPSecure'];
         $mail->Port = $config['mail']['port'];
+
+        // Mail Information
         $mail->setFrom($config['mail']['username']);
+        $mail->addAddress($_POST['email-to']);
+        $mail->addReplyTo($config['mail']['username']);
+
+        // Send Config
+        $mail->isHTML(true);
+        $mail->Subject = "This is a test email";
+        $mail->Body = $_POST['message'];
+
+        // Send mail
+        $mail->send();
     } catch (Exception $e) {
+        // This takes advantage of custom exceptions and error info but doesn't always trigger helpful.
+        throw new Exception("Message could not be sent. Mailer Error: {$mail->ErrorInfo}");
+    } catch (Throwable $e) {
         throw $e;
     }
 }
@@ -45,6 +58,7 @@ if (isset($_POST)) {
 </head>
 <body>
 <h1>PHP Mailer</h1>
+<?= "<p>Hello there ${fullName}. This is a dynamically created sentence using the Faker composer package. If you reload this page, the name will change. Check the source code for some fake error code that you can uncomment and see how THAT works.</p>" ?>
 <form action="index.php" method="post">
     <label for="email_to">To:</label>
     <input id="email_to" name="email-to" type="email">
