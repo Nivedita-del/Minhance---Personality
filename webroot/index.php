@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-use PHPmailer\PHPmailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
 use Faker\Factory;
+use PHPMailer\PHPMailer\Exception;
+use PHPmailer\PHPmailer\PHPMailer;
 
 
 // Faker Demo
