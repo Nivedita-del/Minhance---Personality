@@ -44,14 +44,14 @@ const MbtiModule = (function() {
 	}
 	
 	function calculatePercentages() {
-		e = Math.floor(e / 10 * 100);
-		i = Math.floor(i / 10 * 100);
-		s = Math.floor(s / 20 * 100);
-		n = Math.floor(n / 20 * 100);
-		t = Math.floor(t / 20 * 100);
-		f = Math.floor(f / 20 * 100);
-		j = Math.floor(j / 20 * 100);
-		p = Math.floor(p / 20 * 100);
+		e = Math.floor(e / 12 * 100);
+		i = Math.floor(i / 12 * 100);
+		s = Math.floor(s / 11 * 100);
+		n = Math.floor(n / 11 * 100);
+		t = Math.floor(t / 13 * 100);
+		f = Math.floor(f / 13 * 100);
+		j = Math.floor(j / 14 * 100);
+		p = Math.floor(p / 14 * 100);
 	}
 	
 	function createCharts() {
