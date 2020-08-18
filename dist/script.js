@@ -75,12 +75,11 @@ const MbtiModule = (function() {
 		type += (s >= n) ? "S" : "N";
 		type += (t >= f) ? "T" : "F";
 		type += (j >= p) ? "J" : "P";
-		document.querySelector("#type").innerHTML = type;
-		document.querySelector("#type-title").innerHTML = types[type].title;
-		document.querySelector("#type-percentage").innerHTML = types[type].percentage;
-		document.querySelector("#type-description").innerHTML = types[type].description;
+		//document.querySelector("#type").innerHTML = type;
+		//document.querySelector("#type-title").innerHTML = types[type].title;
+		//document.querySelector("#type-percentage").innerHTML = types[type].percentage;
+		//document.querySelector("#type-description").innerHTML = types[type].description;
 		document.querySelector("#type-site").href = types[type].site;
-		
 		document.querySelector("#type-details").classList.remove("hidden");
 		document.querySelector("#scroll-down").classList.remove("hidden");
 		document.querySelector("#results").classList.remove("hidden");
@@ -91,7 +90,7 @@ const MbtiModule = (function() {
 			resetScores();
 			getScores();
 			calculatePercentages();
-			createCharts();
+			//createCharts();
 			showResults();
 		}
 	};
